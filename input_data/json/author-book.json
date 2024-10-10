@@ -1,0 +1,19 @@
+{
+  "models": [
+    {
+      "model_name": "Author",
+      "fields": [
+        {"name": "name", "type": "CharField", "max_length": 100},
+        {"name": "birthdate", "type": "DateField"}
+      ]
+    },
+    {
+      "model_name": "Book",
+      "fields": [
+        {"name": "title", "type": "CharField", "max_length": 255},
+        {"name": "author", "type": "ForeignKey", "related_model": "Author", "on_delete": "CASCADE"},
+        {"name": "published_date", "type": "DateField"}
+      ]
+    }
+  ]
+}
