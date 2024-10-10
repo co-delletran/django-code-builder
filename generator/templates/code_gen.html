@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Django Code Generator</title>
+  </head>
+  <body>
+    <h1>Django Code Generator</h1>
+
+    <form method="POST">
+      {% csrf_token %}
+      <textarea
+        name="json_input"
+        rows="20"
+        cols="80"
+        placeholder="Enter your JSON model here"
+      ></textarea
+      ><br /><br />
+      <button type="submit">Generate Django Code</button>
+    </form>
+
+    {% if code %}
+    <h2>Generated Code:</h2>
+    <pre>{{ code }}</pre>
+    {% endif %}
+  </body>
+</html>
